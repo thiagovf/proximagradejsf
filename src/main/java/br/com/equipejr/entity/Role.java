@@ -9,13 +9,13 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "USER_ROLES")
 public class Role {
-	
+
 	@Id
 	@GeneratedValue
-	@Column(name="user_role_id")
+	@Column(name = "user_role_id")
 	private Long id;
-	
-	@Column(name="role", nullable=false)
+
+	@Column(name = "role", nullable = false)
 	private String description;
 
 	public String getDescription() {
@@ -33,6 +33,5 @@ public class Role {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
 
 }

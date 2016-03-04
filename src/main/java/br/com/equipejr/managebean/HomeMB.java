@@ -1,22 +1,25 @@
 package br.com.equipejr.managebean;
 
+import java.util.List;
+
+import javax.annotation.PostConstruct;
+import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
-import javax.inject.Inject;
 import javax.inject.Named;
 
 import br.com.equipejr.dao.UserDAO;
 
-//@ManagedBean
+@ManagedBean
 @Named("homeMB")
 @RequestScoped
 public class HomeMB {
 
-//	@ManagedProperty(name = "userDAO", value = "#{userDAO}")
-	@Inject
-	private UserDAO userDAO;
-	
+	private UserDAO userDAO = new UserDAO();
+	private List<String> emails;
+
+	@PostConstruct
 	public void test() {
-		userDAO.getAllUserMails();
+		emails = userDAO.getAllUserMails();
 	}
 
 	public UserDAO getUserDAO() {
@@ -25,6 +28,14 @@ public class HomeMB {
 
 	public void setUserDAO(UserDAO userDAO) {
 		this.userDAO = userDAO;
+	}
+
+	public List<String> getEmails() {
+		return emails;
+	}
+
+	public void setEmails(List<String> emails) {
+		this.emails = emails;
 	}
 	
 }

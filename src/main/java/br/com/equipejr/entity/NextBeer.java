@@ -15,33 +15,34 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name="NEXT_BEER")
+@Table(name = "NEXT_BEER")
 public class NextBeer {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
-	
+
 	@Column(nullable = false)
 	@Temporal(TemporalType.TIMESTAMP)
 	private Calendar date;
-	
+
 	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "date_to_pay")
 	private Calendar dateToPay;
-	
+
 	@Column(nullable = false)
 	private Boolean paid;
-	
+
 	@Column(nullable = false)
 	private String motivation;
-	
-	@Column(nullable = false, columnDefinition="Varchar(255) default ''")
+
+	@Column(nullable = false, columnDefinition = "Varchar(255) default ''")
 	private String lat;
 
-	@Column(nullable = false, columnDefinition="Varchar(255) default ''")
+	@Column(nullable = false, columnDefinition = "Varchar(255) default ''")
 	private String lng;
-	
-	@ManyToOne(fetch=FetchType.LAZY, cascade = CascadeType.DETACH)
+
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.DETACH)
 	private User payer;
 
 	public Calendar getDate() {
