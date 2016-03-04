@@ -9,7 +9,7 @@
 		<class>br.com.equipejr.entity.NextBeer</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.3.73.2:3306/proximagrade2" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.2.236.130:3306/proximagrade2" />
 			<property name="javax.persistence.jdbc.user" value="admina6iPqU4" />
 			<property name="javax.persistence.jdbc.password" value="BQPsAt4vqYaX" />
 			<property name="hibernate.hbm2ddl.auto" value="update" />
