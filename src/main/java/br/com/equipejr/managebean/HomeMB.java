@@ -7,35 +7,24 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.inject.Named;
 
-import br.com.equipejr.dao.UserDAO;
+import br.com.equipejr.dao.NextBeerDAO;
+import br.com.equipejr.entity.NextBeer;
 
 @ManagedBean
 @Named("homeMB")
 @RequestScoped
 public class HomeMB {
 
-	private UserDAO userDAO = new UserDAO();
-	private List<String> emails;
+	private NextBeerDAO nextBeerDAO = new NextBeerDAO();
+	private List<NextBeer> nextBeers;
 
 	@PostConstruct
-	public void test() {
-		emails = userDAO.getAllUserMails();
+	public void init() {
+		nextBeers = nextBeerDAO.getAllNextBeers();
 	}
 
-	public UserDAO getUserDAO() {
-		return userDAO;
+	public List<NextBeer> getNextBeers() {
+		return nextBeers;
 	}
 
-	public void setUserDAO(UserDAO userDAO) {
-		this.userDAO = userDAO;
-	}
-
-	public List<String> getEmails() {
-		return emails;
-	}
-
-	public void setEmails(List<String> emails) {
-		this.emails = emails;
-	}
-	
 }
