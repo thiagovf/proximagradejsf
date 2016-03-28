@@ -3,7 +3,7 @@
              xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
                       http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
   version="2.0">
-	<persistence-unit name="equipePU">
+	<!-- <persistence-unit name="equipePU">
  		<jta-data-source>java:jboss/datasources/MySQLDS</jta-data-source>
 		<class>br.com.equipejr.entity.User</class>
 		<class>br.com.equipejr.entity.Role</class>
@@ -13,8 +13,8 @@
 			<property name="hibernate.show_sql" value="false" />
 			<property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.JBossAppServerJtaPlatform" />
 		</properties>
-	</persistence-unit>
-	<!-- <persistence-unit name="equipePU">
+	</persistence-unit>-->
+	<persistence-unit name="equipePU">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
  		<jta-data-source>java:jboss/datasources/HSQLDS</jta-data-source>
 		<class>br.com.equipejr.entity.User</class>
@@ -27,7 +27,7 @@
 			<property name="hibernate.hbm2ddl.auto" value="update" />
 			<property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.JBossAppServerJtaPlatform" />
 		</properties>
-	</persistence-unit>-->
+	</persistence-unit>
 
 	<!-- <persistence-unit name="equipePU_mysql">
 
