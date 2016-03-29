@@ -12,7 +12,8 @@
 		<h:form>
 			<p:toolbar style="margin:20px 0px">
 				<f:facet name="left">
-					<p:commandButton type="button" value="Ofertar grade!" icon="ui-icon-document" />
+					<p:commandButton action="home.xhtml?faces-redirect=true" icon="ui-icon-home" />
+					<p:commandButton action="paybr.xhtml?faces-redirect=true" value="Pay a beer" icon="ui-icon-cart" />
 					<!-- <p:commandButton type="button" value="Open" icon="ui-icon-folder-open" />
 					<p:commandButton type="button" title="Save" icon="ui-icon-disk" />
 					<p:commandButton type="button" title="Delete" icon="ui-icon-trash" />
@@ -20,11 +21,11 @@
 				</f:facet>
 
 				<f:facet name="right">
-					<p:menuButton value="Navegar">
-						<p:menuitem value="Próximas Grades" url="#" />
-						<p:menuitem value="Sobre" url="#" />
-						<p:menuitem value="Contato" url="#" />
-					</p:menuButton>
+					<!-- <p:menuButton value="Menu">
+						<p:menuitem value="Nxt Br" url="#" />
+						<p:menuitem value="About" url="#" />
+						<p:menuitem value="Contact" url="#" />
+					</p:menuButton>-->
 				</f:facet>
 			</p:toolbar>
 		</h:form>

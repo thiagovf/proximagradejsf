@@ -1,0 +1,11 @@
+.back-beer {
+	/*background-image: url("https://images8.alphacoders.com/413/413078.jpg");*/
+	/*background-position-x: -200px;*/
+	background-color: #AA8639;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.form-space {
+	padding: 10px;
+}

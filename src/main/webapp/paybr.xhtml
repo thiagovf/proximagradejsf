@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Equipe Jr.</title>
+</h:head>
+<h:body>
+	<ui:composition template="/template/common/commonLayout.xhtml">
+		<ui:define name="content">
+			<div class="container">
+				<h:form>
+					<div class="row">
+						<div class="col-lg-8 col-lg-offset-2 text-center form-space">
+							<h:selectOneMenu value="#{payBrMB.payer}">
+								<f:selectItem itemValue="#{null}" itemLabel="«Selecione algum indivíduo»" />
+								<f:selectItems var="user" itemLabel="#{user.name}" itemValue="#{user}" value="#{payBrMB.getAllUsers()}" />
+							</h:selectOneMenu>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-8 col-lg-offset-2 text-center form-space">
+							<h:outputLabel for="justification" value="Justificativa" /><br />
+							<h:inputTextarea id="justification" required="true" cols="50" rows="4" value="#{payBrMB.motivation}">
+								<f:validateLength maximum="255" />
+							</h:inputTextarea>
+						</div>
+					</div>
+					<div class="row">
+					<div class="col-lg-8 col-lg-offset-2 text-center form-space">
+						<p:commandButton value="Cancelar" action="#{payBrMB.cancel()}" style="min-width:140px;min-height: 42px;"/>
+						<p:commandButton value="Salvar" actionListener="#{payBrMB.save()}" style="min-width:140px;min-height: 42px;" />
+					</div>
+					</div>
+				</h:form>
+			</div>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

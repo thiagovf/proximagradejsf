@@ -34,4 +34,11 @@ public class UserDAO {
 
 		return query.getResultList();
 	}
+	
+	public List<User> getAllUsers() {
+		Query query = manager
+				.createQuery("select u from User as u order by u.name ");
+
+		return (List<User>) query.getResultList();
+	}
 }
